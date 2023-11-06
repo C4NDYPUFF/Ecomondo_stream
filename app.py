@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import plotly_express as px
+from decouple import config
 from data_processing import load_data
 from plotting import create_pie_chart, create_bar_chart, plot_ten_important
 
@@ -14,7 +15,7 @@ def main_app():
 
 
     # Load data using the load_data function from data_processing.py
-    df, df2, new_dataset = load_data('/home/igeco/Documents/ENTREGA BASES DE DATOS ESPEJO/ECOMONDO/Ecomondo Final.csv')
+    df, df2, new_dataset = load_data(config('CSV_FILE_PATH'))
 
 
     # Data processing
