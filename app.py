@@ -15,7 +15,7 @@ def main_app():
 
 
     # Load data using the load_data function from data_processing.py
-    df, df2, new_dataset = load_data(config('CSV_FILE_PATH'))
+    df, df2, new_dataset = load_data(st.secrets['CSV_FILE_PATH'])
 
 
     # Data processing

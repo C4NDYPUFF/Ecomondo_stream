@@ -1,10 +1,11 @@
 import pandas as pd 
+import streamlit as st
 from decouple import config
 
 
 def load_data(file_path):
     df = pd.read_csv(file_path)
-    df2 = pd.read_excel(config('EXCEL_FILE_PATH'))
+    df2 = pd.read_excel(st.secrets['EXCEL_FILE_PATH'])
 
     duplicated = df2.copy()
     duplicated['Rep'] = df['Email'].isin(df2['Email'])
