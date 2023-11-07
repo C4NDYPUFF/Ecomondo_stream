@@ -21,7 +21,7 @@ def main_app():
     # Data processing
     duplicated = df2.copy()
     duplicated['Repite'] = df['Email'].isin(df2['Email'])
-    new_dataset = duplicated[['Nombre', 'ApellidoPaterno', 'Asistencia', 'Categoria', 'Email', 'Rep']].copy()
+    new_dataset = duplicated[['Nombre', 'ApellidoPaterno', 'Asistencia', 'Categoria', 'Email', 'Repite']].copy()
 
     # Main page layout
     st.title(':bar_chart: ECOMONDO VISITANTES 2022 y 2023')
