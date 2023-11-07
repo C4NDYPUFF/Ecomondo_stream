@@ -2,5 +2,5 @@ pandas==2.1.2
 plotly_express==0.4.1
 python-decouple==3.8
 streamlit==1.28.0
-openpyxl=3.0.10
+openpyxl==3.0.10
 
