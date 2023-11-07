@@ -20,7 +20,7 @@ def main_app():
 
     # Data processing
     duplicated = df2.copy()
-    duplicated['Rep'] = df['Email'].isin(df2['Email'])
+    duplicated['Repite'] = df['Email'].isin(df2['Email'])
     new_dataset = duplicated[['Nombre', 'ApellidoPaterno', 'Asistencia', 'Categoria', 'Email', 'Rep']].copy()
 
     # Main page layout
@@ -55,9 +55,9 @@ def main_app():
     st.plotly_chart(fig_empresa, use_container_width=True)
 
     # Sidebar for filtering
-    st.sidebar.header('Please Filter Here')
+    st.sidebar.header('Opciones de Filtrado')
     asistencia = st.sidebar.multiselect('Selecciona si asistio o no', options=new_dataset['Asistencia'].unique(), default=new_dataset['Asistencia'].unique())
-    categoria = st.sidebar.multiselect('Selecciona el cargo', options=new_dataset['Categoria'].unique(), default=new_dataset['Categoria'].unique())
+    categoria = st.sidebar.multiselect('Selecciona la categoria', options=new_dataset['Categoria'].unique(), default=new_dataset['Categoria'].unique())
     rep = st.sidebar.multiselect('Selecciona si ya visito ECOMONDO', options=new_dataset['Rep'].unique(), default=new_dataset['Rep'].unique())
 
     # Filtered DataFrame
