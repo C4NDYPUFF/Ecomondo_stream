@@ -58,10 +58,10 @@ def main_app():
     st.sidebar.header('Opciones de Filtrado')
     asistencia = st.sidebar.multiselect('Selecciona si asistio o no', options=new_dataset['Asistencia'].unique(), default=new_dataset['Asistencia'].unique())
     categoria = st.sidebar.multiselect('Selecciona la categoria', options=new_dataset['Categoria'].unique(), default=new_dataset['Categoria'].unique())
-    rep = st.sidebar.multiselect('Selecciona si ya visito ECOMONDO', options=new_dataset['Rep'].unique(), default=new_dataset['Rep'].unique())
+    rep = st.sidebar.multiselect('Selecciona si ya visito ECOMONDO', options=new_dataset['Repite'].unique(), default=new_dataset['Rep'].unique())
 
     # Filtered DataFrame
-    df_selection = new_dataset.query('Asistencia == @asistencia & Categoria == @categoria & Rep == @rep')
+    df_selection = new_dataset.query('Asistencia == @asistencia & Categoria == @categoria & Repite == @rep')
     st.dataframe(df_selection)
 
     # Download button
